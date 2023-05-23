@@ -5,7 +5,7 @@ namespace RoboDialer_Yost
 {
     internal class Program
     {
-        
+
         static void Main(string[] args)
         {
             List<Phone> phones = new List<Phone>
@@ -22,15 +22,16 @@ namespace RoboDialer_Yost
                 new CellPhone("Komfort Support", "(714) 472-4409", 2)
             };
 
-            phones.ForEach(phone =>
+            foreach (Phone phone in phones)
             {
+
                 string output = "";
                 if (phone is HomePhone)
                     output = ((HomePhone)phone).Dial();
                 if (phone is CellPhone)
                     output = ((CellPhone)phone).Dial();
                 Console.WriteLine(output);
-            });
+            }
         }
     }
 }
